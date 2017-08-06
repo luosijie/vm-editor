@@ -1,6 +1,6 @@
 <template>
   <button class="vm-editor-button" :class="{ active: slot }">
-    <img :src="require('../assets/iconimg/' + icon + '.png')" height="16" width="16" alt="">
+    <img :src="require('../assets/iconimg/' + icon + '.png')" height="16" width="16" alt="" @click="showSlot">
     <!-- <i :class="icon" @click="showSlot"></i> -->
     <slot v-if="slot"></slot>
   </button>
