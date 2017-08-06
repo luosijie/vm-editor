@@ -1,0 +1,154 @@
+<template>
+  <div class="vm-editor">
+    <VmEditorMenu>
+      <div class="global-control">
+        <VmEditorButton icon="upload" @click.native="uploadHtml"></VmEditorButton>
+      </div>
+    </VmEditorMenu>
+    <div class="content" contenteditable="true">
+        Please Enter ...
+    </div>
+  </div>
+</template>
+<style>
+  .vm-editor{
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #eeeff1;
+    width: 100%;
+    min-width: 900px;
+    overflow: hidden;
+  }
+  .global-control{
+    position: absolute;
+    right: 15px;
+  }
+  .vm-editor .content{
+      outline: 0;
+      min-height: 350px;
+      text-align: left;
+      padding: 15px;
+      font-size: 16px;
+    }
+  .vm-editor .content ul, .vm-editor .content ol{
+    margin: 10px 20px;
+    padding: 0;
+  }
+  .vm-editor .content ul{
+    list-style-type: square;
+  }
+  .vm-editor .content ol{
+    list-style-type: decimal;
+  }
+  .vm-editor .content li{
+    display: list-item;
+    padding: 0;
+  }
+  .vm-editor .content hr{
+    margin: 15px 0;
+    border-top: 1px solid #eeeff1;
+  }
+  .vm-editor .content pre{
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    color: #656565;
+    font-size: 14px;
+  }
+  .vm-editor .content blockquote{
+    display: block;
+    border-left: 4px solid #ddd;
+    margin: 15px 0;
+    padding: 0 15px;
+  }
+  .vm-editor .content img{
+    margin: 20px 0;
+  }
+  .vm-editor .content a{
+    color: #41b883;
+  }
+</style>
+<script>
+import VmEditorMenu from './vm-editor-menu.vue'
+import VmEditorButton from './vm-editor-button.vue'
+export default {
+  name: 'VmEditor',
+  components: {
+    VmEditorMenu,
+    VmEditorButton
+  },
+  data: function () {
+    return {
+      html: 'Please Enter ...'
+    }
+  },
+  methods: {
+    uploadHtml: function () {
+      let style = {
+        ul: `
+              margin: 10px 20px;
+              list-style-type: square;
+              padding: 0;
+            `,
+        ol: `
+              margin: 10px 20px;
+              list-style-type: decimal;
+              padding: 0;
+            `,
+        li: `
+              display: list-item;
+              padding: 0;
+            `,
+        hr: `
+              margin: 15px 0;
+              border-top: 1px solid #eeeff1;
+            `,
+        pre: `
+              display: block;
+              margin: 10px 0;
+              padding: 8px;
+              border-radius: 4px;
+              background-color: #f2f2f2;
+              color: #656565;
+              font-size: 14px;
+             `,
+        blockquote: `
+                      display: block;
+                      border-left: 4px solid #ddd;
+                      margin: 15px 0;
+                      padding: 0 15px;
+                    `,
+        img: `
+               margin: 20px 0;
+             `,
+        a: `
+            color: #41b883;
+           `
+      }
+      let html = document.getElementsByClassName('content')[0]
+      let htmlContainerParent = document.createElement('div')
+      let htmlContainer = document.createElement('div')
+      let tagNames = Object.keys(style)
+      for (let i = 0; i < tagNames.length; i++) {
+        let _tagNames = html.getElementsByTagName(tagNames[i])
+        if (_tagNames.length > 0) {
+          for (let j = 0; j < _tagNames.length; j++) {
+            _tagNames[j].style = style[tagNames[i]]
+          }
+        }
+      }
+      htmlContainer.style = `
+                              text-align: left;
+                              padding: 15px;
+                              font-size: 16px; 
+                            `
+      htmlContainer.innerHTML = html.innerHTML
+      htmlContainerParent.appendChild(htmlContainer)
+
+      this.$emit('upload', htmlContainerParent.innerHTML)
+    }
+  }
+}
+</script>
