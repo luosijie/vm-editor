@@ -12,12 +12,15 @@
 ```
 npm install --save vm-editor
 ```
+
 ### Usage
 
 ```
 import VmEditor from 'vm-editor'
 ```
+
 Trigger upload event by click upload button 
+
 ```
 <VmEditor @upload="getHtml"></VmEditor>
 ...
@@ -27,5 +30,6 @@ methods: {
   }
 }
 ```
+
 ### License
 [MIT](https://github.com/luosijie/vm-editor/blob/master/LICENSE.md)
