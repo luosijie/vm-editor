@@ -4,7 +4,7 @@
     <input type="file" accept="image/gif, image/jpeg, image/png" @change="setImage">
   </div>
 </template>
-<style>
+<style lang="less">
   .add-img{
     width: 100px;
     height: 30px;
@@ -13,17 +13,17 @@
     text-align: center;
     position: relative;
     cursor: pointer;
-  }
-  .add-img:hover{
-    background-color: #f8f8f8;
-  }
-  .add-img input{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
+    &:hover{
+      background-color: #f8f8f8;
+    }
+    input{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
   }
 </style>
 <script>

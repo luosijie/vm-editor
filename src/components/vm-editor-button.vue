@@ -1,12 +1,12 @@
 <template>
   <button class="vm-editor-button" :class="{ active: slot }" @mouseleave="hideSlot">
-    <img :src="require('../assets/iconimg/' + icon + '.png')" height="16" width="16" alt="" @click="showSlot">
+    <img :src="require('../assets/iconimg/' + icon + '.png')" width="16" alt="" @click="showSlot">
     <!-- <i :class="icon" @click="showSlot"></i> -->
     <slot v-if="slot"></slot>
     <span class="block"></span>
   </button>
 </template>
-<style>
+<style lang="less">
   button.vm-editor-button{
     width: 24px;
     height: 24px;
@@ -19,19 +19,19 @@
     margin-left: 10px;
     display: flex;
     justify-content: center;
-  }
-  button.vm-editor-button:first-child{
-    margin-left: 0;
-  }
-  button.vm-editor-button:hover{        
-    background-color: #eee;
-  }
-  button.vm-editor-button i{
-    display: inline-block;
-    line-height: 24px;
-    font-size: 15px;
-    color: #858585;
-    text-align: center;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:hover{
+      background-color: #eee;
+    }
+    &:i{
+      display: inline-block;
+      line-height: 24px;
+      font-size: 15px;
+      color: #858585;
+      text-align: center;
+    }
   }
 </style>
 <script>

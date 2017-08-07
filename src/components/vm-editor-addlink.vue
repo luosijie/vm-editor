@@ -4,23 +4,23 @@
     <button @click="setLink">Add</button>
   </div>
 </template>
-<style>
+<style lang="less">
   .add-link{
     display: flex;
     margin: 10px; 
-  }
-  .add-link input{
-    border: 1px solid #eeeff1;
-  }
-  .add-link button{
-    margin-left: 10px;
-    width: 50px;
-    background-color: #555;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    outline: 0;
-    cursor: pointer;
+    input{
+      border: 1px solid #eeeff1;
+    }
+    button{
+      margin-left: 10px;
+      width: 50px;
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      outline: 0;
+      cursor: pointer;
+    }
   }
 </style>
 <script>

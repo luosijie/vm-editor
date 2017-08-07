@@ -5,12 +5,10 @@
         <VmEditorButton icon="upload" @click.native="uploadHtml"></VmEditorButton>
       </div>
     </VmEditorMenu>
-    <div class="content" contenteditable="true">
-        Please Enter ...
-    </div>
+    <div class="content" contenteditable="true" v-focus></div>
   </div>
 </template>
-<style>
+<style lang="less">
   .vm-editor{
     background-color: white;
     border-radius: 4px;
@@ -18,56 +16,56 @@
     width: 100%;
     min-width: 900px;
     overflow: hidden;
-  }
-  .global-control{
-    position: absolute;
-    right: 15px;
-  }
-  .vm-editor .content{
+    .global-control{
+      position: absolute;
+      right: 15px;
+    }
+    .content{
       outline: 0;
       min-height: 350px;
       text-align: left;
       padding: 15px;
       font-size: 16px;
+      ul, ol{
+        margin: 10px 20px;
+        padding: 0;
+      }
+      ul{
+        list-style-type: square;
+      }
+      ol{
+        list-style-type: decimal;
+      }
+      li{
+        display: list-item;
+        padding: 0;
+      }
+      hr{
+        margin: 15px 0;
+        border-top: 1px solid #eeeff1;
+      }
+      pre{
+        display: block;
+        margin: 10px 0;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #f2f2f2;
+        color: #656565;
+        font-size: 14px;
+      }
+      blockquote{
+        display: block;
+        border-left: 4px solid #ddd;
+        margin: 15px 0;
+        padding: 0 15px;
+      }
+      img{
+        margin: 20px 0;
+      }
+      a{
+        color: #41b883;
+      }
     }
-  .vm-editor .content ul, .vm-editor .content ol{
-    margin: 10px 20px;
-    padding: 0;
-  }
-  .vm-editor .content ul{
-    list-style-type: square;
-  }
-  .vm-editor .content ol{
-    list-style-type: decimal;
-  }
-  .vm-editor .content li{
-    display: list-item;
-    padding: 0;
-  }
-  .vm-editor .content hr{
-    margin: 15px 0;
-    border-top: 1px solid #eeeff1;
-  }
-  .vm-editor .content pre{
-    display: block;
-    margin: 10px 0;
-    padding: 8px;
-    border-radius: 4px;
-    background-color: #f2f2f2;
-    color: #656565;
-    font-size: 14px;
-  }
-  .vm-editor .content blockquote{
-    display: block;
-    border-left: 4px solid #ddd;
-    margin: 15px 0;
-    padding: 0 15px;
-  }
-  .vm-editor .content img{
-    margin: 20px 0;
-  }
-  .vm-editor .content a{
-    color: #41b883;
   }
 </style>
 <script>
@@ -148,6 +146,13 @@ export default {
       htmlContainerParent.appendChild(htmlContainer)
 
       this.$emit('upload', htmlContainerParent.innerHTML)
+    }
+  },
+  directives: {
+    focus: {
+      inserted: function (el) {
+        el.focus()
+      }
     }
   }
 }

@@ -96,39 +96,39 @@
         <slot></slot>
   </div>
 </template>
-<style>
-    .vm-editor-menu{
-      display: flex;
-      height: 40px;
-      align-items: center;
-      padding: 0 15px;
-      background-color: #fafbfc;
-      border-bottom: 1px solid #eeeff1;
-      position: relative;
-    }
-    .vm-editor-menu .line{
+<style lang="less">
+  .vm-editor-menu{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding: 0 15px;
+    background-color: #fafbfc;
+    border-bottom: 1px solid #eeeff1;
+    position: relative;
+    .line{
       display: inline-block;
       width: 1px;
       height: 40px;
       margin: 0 10px;
       background-color: #eeeff1;
     }
-    ul.vm-editor-ul{
-      padding: 0;
-      margin: 0;  
-    }
-    ul.vm-editor-ul li{
+  }
+  ul.vm-editor-ul{
+    padding: 0;
+    margin: 0;
+    li{
       margin: 0;
       padding: 10px 30px;
       display: flex;
       justify-content: center;
-    }
-    ul.vm-editor-ul li h1{
-      text-align: center;
-    }
-    ul.vm-editor-ul li:hover{
-      background: #f8f8f8;
-    }
+      &:hover{
+        background: #f8f8f8;
+      }
+      h1{
+        text-align: center;
+      }
+    }  
+  }
 </style>
 <script>
 import VmEditorButton from './vm-editor-button.vue'
