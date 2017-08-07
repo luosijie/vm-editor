@@ -1,8 +1,9 @@
 <template>
-  <button class="vm-editor-button" :class="{ active: slot }">
+  <button class="vm-editor-button" :class="{ active: slot }" @mouseleave="hideSlot">
     <img :src="require('../assets/iconimg/' + icon + '.png')" height="16" width="16" alt="" @click="showSlot">
     <!-- <i :class="icon" @click="showSlot"></i> -->
     <slot v-if="slot"></slot>
+    <span class="block"></span>
   </button>
 </template>
 <style>
@@ -50,6 +51,9 @@ export default {
   methods: {
     showSlot () {
       this.slot === false ? this.slot = true : this.slot = false
+    },
+    hideSlot () {
+      this.slot = false
     }
   }
 }

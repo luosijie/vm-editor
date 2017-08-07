@@ -154,18 +154,6 @@ export default {
       document.execCommand('styleWithCSS', null, true)
       document.execCommand(commandName, false, valueArgument)
     },
-    setHtml: function (type) {
-      let selection = window.getSelection().anchorNode.data
-      let selectionText
-      let innerHtml
-      if (selection) {
-        selectionText = selection.replace(/(^\s*)|(\s*$)/g, '')
-      } else {
-        selectionText = '请输入内容'
-      }
-      innerHtml = '<' + type + '>' + selectionText + '</' + type + '>'
-      this.execCommand('insertHTML', innerHtml)
-    },
     setImage: function (evt) {
       let reader = new FileReader()
       let file = evt.target.files[0]
