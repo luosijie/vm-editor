@@ -18,6 +18,7 @@
 
 <script>
 import VmEditor from './components/vm-editor.vue'
+// import VmEditor from '../publish/vm_editor.min.js'
 export default {
   name: 'app',
   components: {

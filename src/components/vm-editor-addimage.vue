@@ -4,7 +4,7 @@
     <input type="file" accept="image/gif, image/jpeg, image/png" @change="setImage">
   </div>
 </template>
-<style lang="less">
+<style lang="scss">
   .add-img{
     width: 100px;
     height: 30px;

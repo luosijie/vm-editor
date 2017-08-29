@@ -14,7 +14,7 @@
     <li @click="setColor('#99a9bf')"></li>
   </ul>
 </template>
-<style lang="less">
+<style lang="scss">
   ul.vm-editor-fontcolor{
     margin: 3px;
     width: 107px;

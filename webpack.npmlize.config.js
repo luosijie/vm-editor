@@ -2,14 +2,21 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/components/vm-editor.js',
+  entry: './src/components/vm-editor.vue',
   output: {
     path: path.resolve(__dirname, './publish'),
     // publicPath: '/dist/',
-    filename: 'vm-editor.min.js',
+    filename: 'vm_editor.min.js',
     library: 'vm-editor',
     libraryTarget: 'umd'
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ],
   module: {
     rules: [
       {
@@ -34,14 +41,5 @@ module.exports = {
         }
       }
     ]
-  },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
+  }
 }

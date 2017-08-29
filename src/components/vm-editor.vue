@@ -8,7 +8,7 @@
     <div class="content" contenteditable="true" v-focus></div>
   </div>
 </template>
-<style lang="less">
+<style lang="scss">
   .vm-editor{
     background-color: white;
     border-radius: 4px;

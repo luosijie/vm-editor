@@ -96,7 +96,7 @@
         <slot></slot>
   </div>
 </template>
-<style lang="less">
+<style lang="scss">
   .vm-editor-menu{
     display: flex;
     height: 40px;

@@ -3,7 +3,7 @@
       <slot></slot>
     </div>
 </template>
-<style lang="less">
+<style lang="scss">
   .vm-editor-dropdown{
     position: absolute;
     background: #fff;

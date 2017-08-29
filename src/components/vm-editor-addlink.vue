@@ -4,7 +4,7 @@
     <button @click="setLink">Add</button>
   </div>
 </template>
-<style lang="less">
+<style lang="scss">
   .add-link{
     display: flex;
     margin: 10px; 

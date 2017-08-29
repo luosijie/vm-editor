@@ -6,7 +6,7 @@
     <span class="block"></span>
   </button>
 </template>
-<style lang="less">
+<style lang="scss">
   button.vm-editor-button{
     width: 24px;
     height: 24px;
