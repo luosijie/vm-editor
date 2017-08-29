@@ -15,7 +15,7 @@ npm install --save vm-editor
 
 ### Usage
 
-```js
+```vue
 import VmEditor from 'vm-editor'
 ```
 
