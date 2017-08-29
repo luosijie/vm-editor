@@ -21,7 +21,7 @@ import VmEditor from 'vm-editor'
 
 Trigger upload event by click upload button 
 
-```vue
+```html
 <VmEditor @upload="getHtml"></VmEditor>
 ...
 methods: {
