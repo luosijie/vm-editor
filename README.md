@@ -15,13 +15,13 @@ npm install --save vm-editor
 
 ### Usage
 
-```vue
+```js
 import VmEditor from 'vm-editor'
 ```
 
 Trigger upload event by click upload button 
 
-```html
+```vue
 <VmEditor @upload="getHtml"></VmEditor>
 ...
 methods: {
