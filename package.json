@@ -1,7 +1,7 @@
 {
   "name": "vm-editor",
   "description": "Editor for Vue.js",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Jesse Luo",
   "private": false,
   "main": "./dist/vm-editor.min.js",
