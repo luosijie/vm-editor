@@ -1,17 +1,41 @@
 <template>
   <ul class="vm-editor-fontcolor">
-    <li @click="setColor('#1d8ce0')"></li>
-    <li @click="setColor('#41b883')"></li>
-    <li @click="setColor('#ffa000')"></li>
-    <li @click="setColor('#f60000')"></li>
-    <li @click="setColor('#f0e02f')"></li>
-    <li @click="setColor('#00dc77')"></li>
-    <li @click="setColor('#e6e41c')"></li>
-    <li @click="setColor('#e026a0')"></li>
-    <li @click="setColor('#555555')"></li>
-    <li @click="setColor('#324057')"></li>
-    <li @click="setColor('#8492a6')"></li>
-    <li @click="setColor('#99a9bf')"></li>
+    <li @click="setColor('#1d8ce0')">
+      <button></button>
+    </li>
+    <li @click="setColor('#41b883')">
+      <button></button>
+    </li>
+    <li @click="setColor('#ffa000')">
+      <button></button>
+    </li>
+    <li @click="setColor('#f60000')">
+      <button></button>
+    </li>
+    <li @click="setColor('#f0e02f')">
+      <button></button>
+    </li>
+    <li @click="setColor('#00dc77')">
+      <button></button>
+    </li>
+    <li @click="setColor('#e6e41c')">
+      <button></button>
+    </li>
+    <li @click="setColor('#e026a0')">
+      <button></button>
+    </li>
+    <li @click="setColor('#555555')">
+      <button></button>
+    </li>
+    <li @click="setColor('#324057')">
+      <button></button>
+    </li>
+    <li @click="setColor('#8492a6')">
+      <button></button>
+    </li>
+    <li @click="setColor('#99a9bf')">
+      <button></button>
+    </li>
   </ul>
 </template>
 <style lang="scss">
@@ -64,6 +88,12 @@
       }
       &:nth-child(12){
         background-color: #99a9bf;
+      }
+      button{
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: transparent;
       }
     }
   }

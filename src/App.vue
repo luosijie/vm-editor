@@ -2,10 +2,11 @@
   <div id="app">
     <img src="./assets/logo_vmeditor.png" height="250" width="250">
     <h2><span style="color: #41b883">V</span>M Editor</h2>
-    <p>Editor for Vue.js</p>
-    <div class="editor-container">
-      <VmEditor @upload="showHtml"></VmEditor>
-    </div>
+    <p class="desc">Editor for Vue.js</p>
+    <VmEditor width="950px" 
+              height="400px" 
+              @upload="showHtml">
+    </VmEditor>
     <div class="author">
       <a href="https://github.com/luosijie/vm-editor">
         <img src="./assets/iconimg/github.png" height="32" alt="" width="32">
@@ -18,7 +19,7 @@
 
 <script>
 import VmEditor from './components/vm-editor.vue'
-// import VmEditor from '../publish/vm_editor.min.js'
+// import VmEditor from '../dist/vm-editor.min.js'
 export default {
   name: 'app',
   components: {
@@ -48,15 +49,18 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.editor-container, .preview{
+.preview{
   margin-top: 30px;
-  width: 900px;
+  width: 950px;
 }
 .author{
   margin-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+p.desc{
+  margin-bottom: 40px;
 }
 h2 {
   font-weight: bold;

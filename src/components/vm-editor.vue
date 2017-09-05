@@ -1,11 +1,9 @@
 <template>
-  <div class="vm-editor">
+  <div class="vm-editor" :style="{width: width, height: height}">
     <VmEditorMenu>
-      <div class="global-control">
-        <VmEditorButton icon="upload" @click.native="uploadHtml"></VmEditorButton>
-      </div>
+      <VmEditorButton icon="upload" @click.native="uploadHtml" class="global-control"></VmEditorButton>
     </VmEditorMenu>
-    <div class="content" contenteditable="true" v-focus></div>
+    <div class="vm-editor-content" contenteditable="true" v-focus></div>
   </div>
 </template>
 <style lang="scss">
@@ -13,15 +11,15 @@
     background-color: white;
     border-radius: 4px;
     border: 1px solid #eeeff1;
-    width: 100%;
     min-width: 900px;
     overflow: hidden;
     .global-control{
       position: absolute;
       right: 15px;
     }
-    .content{
+    .vm-editor-content{
       outline: 0;
+      height: calc(100% - 40px);
       min-height: 350px;
       text-align: left;
       padding: 15px;
@@ -77,6 +75,16 @@ export default {
     VmEditorMenu,
     VmEditorButton
   },
+  props: {
+    width: {
+      type: String,
+      default: '950px'
+    },
+    height: {
+      type: String,
+      default: '400px'
+    }
+  },
   data: function () {
     return {
       html: 'Please Enter ...'
@@ -125,7 +133,7 @@ export default {
             color: #41b883;
            `
       }
-      let html = document.getElementsByClassName('content')[0]
+      let html = document.getElementsByClassName('vm-editor-content')[0]
       let htmlContainerParent = document.createElement('div')
       let htmlContainer = document.createElement('div')
       let tagNames = Object.keys(style)

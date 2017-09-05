@@ -1,36 +1,36 @@
 <template>
-  <button class="vm-editor-button" :class="{ active: slot }" @mouseleave="hideSlot">
-    <img :src="require('../assets/iconimg/' + icon + '.png')" width="16" alt="" @click="showSlot">
-    <!-- <i :class="icon" @click="showSlot"></i> -->
+  <div class="vm-editor-button" @mouseleave="hideSlot" @click="showSlot">
+    <span class="button">
+      <img :src="require('../assets/iconimg/' + icon + '.png')" width="16" height="16">
+    </span>
     <slot v-if="slot"></slot>
-    <span class="block"></span>
-  </button>
+  </div>
 </template>
 <style lang="scss">
-  button.vm-editor-button{
-    width: 24px;
-    height: 24px;
+  .vm-editor-button{
     position: relative;
     border-radius: 4px;
     outline: 0;
     cursor: pointer;
     background-color: transparent;
     border: none;
-    margin-left: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    padding: 0;
     &:first-child{
       margin-left: 0;
     }
-    &:hover{
-      background-color: #eee;
-    }
-    &:i{
-      display: inline-block;
-      line-height: 24px;
-      font-size: 15px;
-      color: #858585;
-      text-align: center;
+    span.button{
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover{
+        background-color: #eee;
+      }
     }
   }
 </style>
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     showSlot () {
-      this.slot === false ? this.slot = true : this.slot = false
+      this.slot = this.slot === false ? true : false
     },
     hideSlot () {
       this.slot = false

@@ -3,7 +3,7 @@
   <p>
     <strong>Editor for Vue,</strong> <a href="https://luosijie.github.io/vm-editor/">Live Demo</a>
   </p>
-  <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?style=flat">
+  <img src="https://img.shields.io/badge/version-0.1.3-blue.svg?style=flat">
   <img src="https://img.shields.io/badge/dependency-vue-green.svg?style=flat">
 </div>
 
@@ -22,7 +22,10 @@ import VmEditor from 'vm-editor'
 Trigger upload event by click upload button 
 
 ```html
-<VmEditor @upload="getHtml"></VmEditor>
+<VmEditor width="950px" 
+          height="400px" 
+          @upload="showHtml">
+</VmEditor>
 ...
 methods: {
   getHtml: function (data) {

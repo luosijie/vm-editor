@@ -2,11 +2,11 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/components/vm-editor.vue',
+  entry: './src/components/index.js',
   output: {
-    path: path.resolve(__dirname, './publish'),
+    path: path.resolve(__dirname, './dist'),
     // publicPath: '/dist/',
-    filename: 'vm_editor.min.js',
+    filename: 'vm-editor.min.js',
     library: 'vm-editor',
     libraryTarget: 'umd'
   },

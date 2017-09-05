@@ -1,6 +1,7 @@
 <template>
     <div class="vm-editor-dropdown">
       <slot></slot>
+      <!-- <div class="block"></div> -->
     </div>
 </template>
 <style lang="scss">
@@ -21,6 +22,14 @@
       left: 0;
       top: -15px;
       opacity: 0;
+    }
+    .block{
+      width: 100%;
+      height: 20px;
+      background: transparent;
+      position: absolute;
+      top: -20px;
+      left: 0;
     }
   }
 </style>
