@@ -3,7 +3,7 @@
   <p>
     <strong>Editor for Vue,</strong> <a href="https://luosijie.github.io/vm-editor/">Live Demo</a>
   </p>
-  <img src="https://img.shields.io/badge/version-0.1.3-blue.svg?style=flat">
+  <img src="https://img.shields.io/badge/version-0.1.5-blue.svg?style=flat">
   <img src="https://img.shields.io/badge/dependency-vue-green.svg?style=flat">
 </div>
 
